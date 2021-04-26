@@ -1,0 +1,29 @@
+{
+  "name": "rollup-plugin-include",
+  "version": "1.0.0",
+  "description": "Includes a file into a source, with optional assigning it to a variable",
+  "main": "include.js",
+  "scripts": {
+    "test": "mocha ./test/test.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "rollup",
+    "rollup-plugin",
+    "include",
+    "file",
+    "variable"
+  ],
+  "author": "edwardcoolson <edwardcoolson@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@rollup/pluginutils": "^4.1.0"
+  },
+  "devDependencies": {
+    "mocha": "^8.3.2",
+    "rollup": "^2.45.2"
+  }
+}
