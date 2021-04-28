@@ -1,2 +1,4 @@
 node_modules/
 package-lock.json
+*.kpf
+include.es6.js
