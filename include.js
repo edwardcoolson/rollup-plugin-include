@@ -1,4 +1,4 @@
-const { readFileSync } = require('fs');
+const { readFileSync, existsSync } = require('fs');
 const { dirname, resolve } = require('path');
 const { createFilter } = require('@rollup/pluginutils');
 
@@ -21,6 +21,13 @@ module.exports = (options = {}) => {
     
     return code.replace(PATTERN, (line, head, path, tail) => {
       path = resolve(dirname(id), path);
+      if (!existsSync(path)) {
+        try {
+          path = require.resolve(path);
+        } catch(e) {
+            throw new Error(`File not found: ${path}`);
+        }
+      }
       return head + readFileSync(path, 'utf-8') + tail;
     });
   }
